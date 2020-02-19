@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -169,7 +168,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -292,7 +290,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5123,9 +5120,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751165368}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 9
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -5236,7 +5232,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5444,7 +5439,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5497,6 +5491,7 @@ GameObject:
   - component: {fileID: 1812164298405735174}
   - component: {fileID: 1812164298415113734}
   - component: {fileID: 1812164298407736775}
+  - component: {fileID: 1812164298407736776}
   m_Layer: 0
   m_Name: Bit Gun
   m_TagString: Untagged
@@ -5511,9 +5506,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812164298407736774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe5c9bcbc9bed94e94906ab87ef9796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  fpsCam: {fileID: 6100967878149125565}
+  gunFlash: {fileID: 353584435}
+--- !u!114 &1812164298407736776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812164298407736774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f611f0fd984ce8249abe036527f40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
@@ -5648,10 +5659,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6100967878169032448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7701032e341d042bbe57833a8ebbef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5810ef3b905fb1b48a92f02777d6ced6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9103187255411451337}
+  player: {fileID: 9103187254462318035}
 --- !u!4 &6100967878169032478
 Transform:
   m_ObjectHideFlags: 0
@@ -5742,7 +5753,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5821,22 +5831,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 9103187254462318038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f7a65f4bfa21543aecf4f7fe603b3f, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d494145adbd474caa24887c71b4184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 6100967878169032478}
   orientation: {fileID: 9103187253503524083}
-  moveSpeed: 2000
+  moveSpeed: 4500
   maxSpeed: 20
   grounded: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
-  counterMovement: 0.25
+    m_Bits: 0
+  counterMovement: 0.175
   maxSlopeAngle: 35
-  slideForce: 200
+  slideForce: 400
   slideCounterMovement: 0.2
-  jumpForce: 350
+  jumpForce: 550
 --- !u!1 &9103187255411451336
 GameObject:
   m_ObjectHideFlags: 0
